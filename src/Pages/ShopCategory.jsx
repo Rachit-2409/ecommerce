@@ -5,7 +5,7 @@ import dropdown_icon from '../Components/assets/dropdown_icon.png'
 import Item from '../Components/Items/Item'
 
 const ShopCategory = (props) => {
-  const { all_products } = useContext(ShopContext)
+  const { all_product } = useContext(ShopContext)
   return (
     <div className='shop-category'>
       <img className='shopcategory-banner' src={props.banner} alt="banner" />
@@ -17,9 +17,8 @@ const ShopCategory = (props) => {
           sort by <img src={dropdown_icon} alt='' />
         </div>
       </div>
-      {console.log(props.category)}
       <div className="shopCategory-products">
-        {all_products.map((e, i) => {
+        {all_product.map((e, i) => {
           console.log(e.category)
           if (props.category === e.category) {
             return (<Item key={e.id} id={e.id} image={e.image} name={e.name} new_price={e.new_price} old_price={e.old_price} />)
